@@ -7,6 +7,7 @@ if($requestMethod != 'PUT') {
 } else {
     $data = json_decode(file_get_contents('php://input'));
     $date = new DateTime($data->date);
+    $date->setTimezone(new DateTimeZone('America/Chicago'));
     $status = $data->status;
     $hide_from_page = $data->hide_from_page;
 
@@ -35,7 +36,7 @@ if($requestMethod != 'PUT') {
     fwrite($xml, "<Response>");
     fwrite($xml, "<Say voice=\"woman\">");
     if ($status == 0) { // Undecided
-        fwrite($xml, "The public astronomy night on $month_str $day_ordinal has not be decided on yet, please check again later.");
+        fwrite($xml, "The public astronomy night on $month_str $day_ordinal has not been decided on yet, please check again later.");
     } else if($status == 1) { // canceled
         fwrite($xml, "The public astronomy night on $month_str $day_ordinal has been canceled because of clouds.");
     } else if($status == 2) { // happening
