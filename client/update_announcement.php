@@ -23,11 +23,11 @@ if($requestMethod != 'PUT') {
     if ($hide_from_page) {
         fwrite($html, "");
     } else if ($status == 0) { // Undecided
-        fwrite($html, "<div style=\"fontSize: 200%; background-color: yellow;\">$month_str $day_ordinal Public Astronomy Night Status: Not decided yet. Check again later.</div>");
+        fwrite($html, "<div style=\"font-size: 200%; background-color: yellow;\">$month_str $day_ordinal Public Astronomy Night Status: Not decided yet. Check again later.</div>");
     } else if($status == 1) { // canceled
-        fwrite($html, "<div style=\"fontSize: 200%; background-color: red;\">$month_str $day_ordinal Public Astronomy Night Status: Canceled because of clouds, hope to see you next time.</div>");
+        fwrite($html, "<div style=\"font-size: 200%; background-color: red;\">$month_str $day_ordinal Public Astronomy Night Status: Canceled because of clouds, hope to see you next time.</div>");
     } else if($status == 2) { // happening
-        fwrite($html, "<div style=\"fontSize: 200%; background-color: green;\">$month_str $day_ordinal Public Astronomy Night Status: Will be held and starts at $time. Hope you can make it.</div>");
+        fwrite($html, "<div style=\"font-size: 200%; background-color: green;\">$month_str $day_ordinal Public Astronomy Night Status: Will be held and starts at $time. Hope you can make it.</div>");
     }
     fclose($html);
 
