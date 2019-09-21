@@ -104,6 +104,7 @@ class App extends React.Component {
             }
         }).then(handleFetchError).then(() => {
             state.snack_bar = 'Announcement saved';
+            state.snack_bar_error = false;
         }).catch((e) => {
             state.snack_bar = 'Error: Failed to save announcement';
             state.snack_bar_error = true;
