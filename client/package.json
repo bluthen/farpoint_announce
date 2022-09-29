@@ -52,7 +52,7 @@
     "number-to-words": "^1.2.4",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "recharts": "^1.7.1",
+    "recharts": "^2.1.14",
     "style-loader": "^1.0.0",
     "typeface-roboto": "^0.0.75",
     "uuid": "^3.3.3"
